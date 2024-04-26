@@ -1,0 +1,36 @@
+.card{
+background: rgba( 255, 255, 255, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 2.5px );
+-webkit-backdrop-filter: blur( 2.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+width: 35vmin;
+}
+.deepBlur{
+background: rgba( 0, 0, 0, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10.5px );
+-webkit-backdrop-filter: blur( 10.5px );
+border-radius: 10px;
+width: 100vmin;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0px 5px;
+}
+.lightBlur{
+background: rgba( 244, 244, 2, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10.5px );
+-webkit-backdrop-filter: blur( 10.5px );
+border-radius: 10px;
+width: 100vmin;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0px 5px;
+
+}
