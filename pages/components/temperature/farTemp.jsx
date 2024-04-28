@@ -2,7 +2,15 @@ import React from 'react'
 
 const FarTemp = ({data}) => {
   return (
-    <div className='text-7xl text-white'>{ (Math.round(data.temp) * 9/5)+32}℉</div>
+    <div className='text-7xl text-white'>
+      {
+        data && (
+          <>
+                  {(Math.round(data.temp) * 9 / 5) + 32}℉
+          </>
+        )
+      }
+    </div>
   )
 }
 

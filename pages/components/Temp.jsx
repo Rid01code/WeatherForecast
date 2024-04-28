@@ -27,20 +27,32 @@ const Temp = ({ data, cityName, weatherDescription, icon }) => {
 };
 
   return (
+    
     <div className='flex flex-col justify-center align-center'>
       <div className='flex items-center justify-evenly'>
         <div>
-          <div className='text-white text-xl flex'>{cityName} <UilLocationPinAlt/></div>
-          <div className='flex items-end'>
+          <div className='text-white text-xl flex'>{cityName} <UilLocationPinAlt /></div>
+          {data && (
+            <div className='flex items-end'>
             {celTemp && <CelTemp data={data} />}
             {farTemp && <FarTemp data={data} />}
             <div className='text-xl text-white ml-5'>
               {celTemp===true ? <button onClick={handleFarTemp}>℉</button> : <button onClick={handleCelTemp}>℃</button>}
             </div>
           </div>
-        
-          <p className='text-white text-lg'>{ weatherDescription }</p>
-        </div>
+          )}
+          
+          <p className='text-white text-lg'>
+            {
+              weatherDescription && (
+                <>
+                  {weatherDescription}
+                </>
+              )
+            }
+
+          </p>
+      </div>
 
 <div>
   {weatherDescription && <ReactAnimatedWeather
@@ -51,8 +63,20 @@ const Temp = ({ data, cityName, weatherDescription, icon }) => {
   />}
 </div>
       </div>
-      <div className='text-white text-xl flex justify-center'>Max {Math.round(data.temp_max)}℃   Min {Math.round(data.temp_min)}℃ || Feels like {Math.round(data.feels_like) }℃</div>
+
+      <div className='text-white text-xl flex justify-center'>
+        {
+          data && (
+            <>
+              Max {Math.round(data.temp_max)}℃   Min {Math.round(data.temp_min)}℃ || Feels like {Math.round(data.feels_like)}℃
+            </>
+          )
+        }
+
+      </div>
+
     </div>
+
   )
 }
 

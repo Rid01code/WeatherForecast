@@ -2,7 +2,15 @@ import React from 'react'
 
 const CelTemp = ({data}) => {
   return (
-    <div className='text-7xl text-white'>{ Math.round(data.temp)}℃</div>
+    <div className='text-7xl text-white'>
+      {
+        data && (
+          <>
+                  {Math.round(data.temp)}℃
+          </>
+        )
+      }
+    </div>
   )
 }
 

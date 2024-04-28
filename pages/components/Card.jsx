@@ -27,8 +27,12 @@ const Card = ({sys , wind , data}) => {
           <p className='text-white pl-2 font-thin text-slate-300'>Wind</p>
         </div>
         <div className='flex pl-2'>
-          <UilArrowUp color="white"/>
-          <p className='text-white'>{ wind.speed}km/h </p>
+          <UilArrowUp color="white" />
+          {
+            wind && (
+            <p className='text-white'>{ wind.speed}km/h </p>
+            )
+          }
         </div>
       </div>
 
@@ -38,10 +42,16 @@ const Card = ({sys , wind , data}) => {
           <p className='text-white pl-2 font-thin text-slate-300'>Humidity</p>
         </div>
         <div className='flex pl-2'>
-          <p className='text-white pl-1'>{ data.humidity}%</p>
+          {
+            data && (
+              <p className='text-white pl-1'>{ data.humidity}%</p>
+            )
+          }
         </div>
       </div>
 
+        {
+          sys && (
       <div className={`${styles.card}  h-24 flex flex-col justify-evenly`}>
         <div className='flex items-end pl-2'>
           <UilSun color="white" />
@@ -50,8 +60,13 @@ const Card = ({sys , wind , data}) => {
         <div className='flex pl-2'>
           <p className='text-white pl-1'>{ formatTime(sys.sunrise)}</p>
         </div>
-      </div>
+      </div>      
+          )
+        }
 
+
+      {
+        sys && (
       <div className={`${styles.card}  h-24 flex flex-col justify-evenly`}>
         <div className='flex items-end pl-2'>
           <UilSunset color="white" />
@@ -61,6 +76,10 @@ const Card = ({sys , wind , data}) => {
           <p className='text-white pl-1'>{ formatTime(sys.sunset)}</p>
         </div>
       </div>
+        )
+      }
+
+
 
     </div>
   )
