@@ -10,7 +10,7 @@ const Search = ({ setCityName }) => {
 let handleCitySearch = async() => {
   const city = (searchedCity.current.value)
   searchedCity.current.value = '';
-  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=e9416e0f19179f9e97cf7c309c53f921`
+  const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=e9416e0f19179f9e97cf7c309c53f921`
   const response = await fetch(url);
   const resJson = await response.json();
   if (resJson.length === 0) {
@@ -29,7 +29,7 @@ let handleCitySearch = async() => {
           // const longitude = position.coords.longitude
           const latitude = 22.572645
           const longitude = 88.363892
-          const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=e9416e0f19179f9e97cf7c309c53f921`
+          const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=e9416e0f19179f9e97cf7c309c53f921`
           const response = await fetch(url);
           const resJson = await response.json();
           setCityName(resJson[0].name);
@@ -42,7 +42,7 @@ let handleCitySearch = async() => {
     const handleCityChange = async (event) => {
     const city = event.target.value;
     searchedCity.current.value = city;
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=e9416e0f19179f9e97cf7c309c53f921`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=e9416e0f19179f9e97cf7c309c53f921`;
     const response = await fetch(url);
     const resJson = await response.json();
       setSuggestions(resJson);

@@ -38,7 +38,7 @@ export default function Home() {
           // const longitude = position.coords.longitude
           const latitude = 22.572645
           const longitude = 88.363892
-          const url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=05952c1c6e8f80a9d53497726d59fc90`
+          const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=05952c1c6e8f80a9d53497726d59fc90`
           const response = await fetch(url);
           const resJson = await response.json();
           setCityName(resJson[0].name);
